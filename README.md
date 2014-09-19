@@ -1,0 +1,8 @@
+# CATest
+## The History for Tomorrow
+
+CATest is a website that pulls information from the STAR Test Results page of the California Department of Education. Here, any public user can access information on 4 major tests that are conducted in California: CST, CMA, CAPA and STS. 
+
+CATest then visualizes the immense amount of information found on the STAR Test Results website so that everyone can gain a better understanding of where each school, district, city and county stands in its standardized test scores.
+
+CATest was made in the hopes of making it easier to target areas which need extra attention and to monitor the progress of students throughout the state of california. 
