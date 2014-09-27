@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>CAtest</title>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.5.0/pure-min.css">
+	<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="/c3.min.js" charset="utf-8"></script>
+	<script src="vendor/modernizr.js"></script>
+	<link rel="stylesheet" href="/c3.css">
+</head>
+<body>
+	<div class="pure-menu pure-menu-open pure-menu-horizontal">
+	    <a href="#" class="pure-menu-heading">CA Test</a>
+	    <ul>
+	        <li class="pure-menu-selected"><a href="/">Home</a></li>
+	        <li><a href="/about">About</a></li>
+	        <li><a href="graphs">Graphs</a></li>
+	        <li><a href="/schools">Schools</a></li>
+	    </ul>
+	</div>
+	<div> <%= yield %> </div>
+</body>
+</html>

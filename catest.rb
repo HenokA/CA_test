@@ -12,7 +12,7 @@ get '/about' do
 	erb :"about.html"
 end
 
-get '/leaderboard' do
-	erb :"leaderboard.html"
+get '/schools' do
+	erb :"schools.html"
 end
 
