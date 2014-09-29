@@ -5,23 +5,8 @@ configure do
 end
 
 get '/' do
-	erb :"index.html"
-end	
-
-get '/tosearch' do
-	erb :"tosearch.html"
-end
-
-get '/home' do
 	erb :"home.html"
-end
-
-get '/counties' do
-	erb :"counties.html"
-end
-get '/districts' do
-	erb :"districts.html"
-end
+end	
 
 post '/home' do
   session['school'] = params[:school]

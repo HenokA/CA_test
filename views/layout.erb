@@ -13,12 +13,17 @@
 	<!--font -->
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
 	<!--select2 -->
+    <script src="/jquery/jquery-1.11.1.min.js"></script>
     <script src="/select2/select2.js" charset="utf-8"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<link href="/select2/select2.css" type="text/css" rel="stylesheet"/>
 	<!--select2 action-->
 	<script>
-        $(document).ready(function() { $("#state").select2(); });
+        $(document).ready(function() { 
+        	$("#school").select2(); 
+        	$("#test").select2(); 
+        	$("#grade").select2(); 
+
+        });
     </script>
 </head>
 <body class = "container">
