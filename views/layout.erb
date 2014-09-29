@@ -1,23 +1,25 @@
 <html>
 <head>
 	<title>CAtest</title>
+	<!--pure -->
 	<link type: "text/css" rel="stylesheet" href = "/style.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.5.0/pure-min.css">
-
-	<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <script src="/c3.min.js" charset="utf-8"></script>
-	<script src="vendor/modernizr.js"></script> -->
-
-	<!-- Load c3.css -->
+	<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
+	<!--d3/c3 -->
 	<link href="/c3/c3.css" rel="stylesheet" type="text/css">
-
-	<!-- Load d3.js and c3.js -->
 	<script src="/d3/d3.js" charset="utf-8"></script>
 	<script src="/c3/c3.js" charset="utf-8"></script>
-	<link rel="stylesheet" href="/c3.css">
-	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
-
+	<!--font -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+	<!--select2 -->
+    <script src="/select2/select2.js" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<link href="/select2/select2.css" type="text/css" rel="stylesheet"/>
+	<!--select2 action-->
+	<script>
+        $(document).ready(function() { $("#state").select2(); });
+    </script>
 </head>
 <body class = "container">
 <div class = "header">
