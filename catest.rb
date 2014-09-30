@@ -103,8 +103,8 @@ get '/schools/:school/:grade/:test' do
 			end
 		end
 	}
-	if mean.empty?
-		redirect('/nopage')
+	if mean.empty? || mean.length != 4
+		redirect('/nopage') 
 	end
 	erb :"schools.html", :locals => {:testname => testname, :countymean => countymean, :school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
 										:fifth => fifth, :sixth => sixth, :info => info}
