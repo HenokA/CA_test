@@ -1,5 +1,5 @@
 .pure-menu{
-	background-color: black;
+	background-color: #7FDBFF;
 }
 .pure-form{
 	text-align: center;
@@ -12,10 +12,10 @@ body {
     line-height: 1.7em;
     color: black;
     font-size: 13px;
-    background-image: url("http://i.imgur.com/w7OltkQ.png");
-
 }
-
+#menu{
+	background-color: #7FDBFF;
+}
 h1,
 h2,
 h3,
@@ -49,11 +49,13 @@ label {
 }
 
 .choices{
-	margin-left: 15%;
+	margin-left:10%;
+	margin-top: 12.5%;
+	height: 100%;
+
 }
 
 .noedge{
-	align: center;
 	margin: .5%;
 	padding-top: 20px;
 }
@@ -62,7 +64,11 @@ label {
 	margin:0px;
 	padding:0px;
 }
-
+#pierow{
+	margin:0px;
+	padding:0px;
+    border: 2px solid #ddd;
+}
 
 /*
  * -- PURE FORM STYLES --
@@ -146,19 +152,25 @@ a.pure-button-primary {
     background-image: "index_back.png";
     z-index: 1;
     overflow: hidden;
-    width: 100%;
-    height: 88%;
     top: 0;
     left: 0;
+    padding = 0px;
+    margin = 0px;
+    border-style: solid;
+	border-right: thick double;
+	border-top: none;
+	border-bottom: none;
+    border-left: none;
+    height: 100%;
 }
 
 .splash {
     /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
     margin: auto;
-    position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    padding = 0px;
+    margin = 0px;
+    position: relative;
+    top: 25%; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
 }
@@ -169,7 +181,6 @@ a.pure-button-primary {
     font-weight: bold;
     font-family: 'Lato', serif;
     color: black;
-    padding: 1em 1.6em;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
@@ -183,3 +194,6 @@ a.pure-button-primary {
     opacity: 0.8;
 }
 
+.pie{
+	text-align: center;
+}

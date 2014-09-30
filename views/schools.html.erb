@@ -1,12 +1,16 @@
-<h1 style="text-align: center;"> <%=info[2]%> </h1>
-
-<div id="chart"></div>
-
-<div class="pure-u-1-4 pure-u-md-1" id = "pie"></div>
-<div class="pure-u-1-4 pure-u-md-1" id = "pie2"></div>
-<div class="pure-u-1-4 pure-u-md-1" id = "pie3"></div>
-<div class="pure-u-1-4 pure-u-md-1" id = "pie4"></div>
-
+<div class = "pure-u-1-4">
+	<h1> <%=info[2]%> </h1>
+	<h2> <%=info[15]%> </h2>
+	<h3> Website: <%= info[6]%> </h3> 
+	<h3> Email: <%= info[7]%> </h3> 
+	<h3> Phone:<%= info[8]%> </h3> 
+	<h3> Fax: <%= info[9]%> </h3> 
+</div>
+<div id="chart" class = "pure-u-2-3"></div>
+<div class="pure-u-1-4 pure-u-md-1" id="pierow"><h1 class="pie"> 2013 Breakdown</h1> <div id = "pie" ></div></div>
+<div class="pure-u-1-4 pure-u-md-1" id="pierow"><h1 class="pie"> 2012 Breakdown</h1> <div id = "pie2"></div></div>
+<div class="pure-u-1-4 pure-u-md-1" id="pierow"><h1 class="pie"> 2011 Breakdown</h1> <div id = "pie3"></div></div>
+<div class="pure-u-1-4 pure-u-md-1" id="pierow"><h1 class="pie"> 2010 Breakdown</h1> <div id = "pie4"></div></div>
 <script type="text/javascript">
 
 var chart = c3.generate({
@@ -16,9 +20,12 @@ var chart = c3.generate({
         xFormat: '%Y', // 'xFormat' can be used as custom format of 'x'
         columns: [
             ['x', '2010', '2011', '2012', '2013'],
-      		<%=mean.reverse.unshift("Average Score Per Year")%>
+      		<%=mean.reverse.unshift("School Average")%>,
+      		<%=countymean.reverse.unshift("County Average")%>
+
         ]
     },
+    
     axis: {
         x: {
             type: 'timeseries',
@@ -33,12 +40,12 @@ var pie = c3.generate({
 	bindto:"#pie",
     data: {
         columns: [
-            ['First', <%=first[0]%>],
-            ['Second', <%=second[0]%>],
-            ['Third', <%=third[0]%>],
-            ['Fourth', <%=fourth[0]%>],
-            ['Fifth', <%=sixth[0]%>],
-            ['Sixth', <%=sixth[0]%>]
+            ['Very Advanced', <%=first[0]%>],
+            ['Very Proficient', <%=second[0]%>],
+            ['Proficient', <%=third[0]%>],
+            ['Basic', <%=fourth[0]%>],
+            ['Below Basic', <%=sixth[0]%>],
+            ['Far Below Basic', <%=sixth[0]%>]
         ],
         title: "2013 Breakdown",
         type : 'pie',
@@ -49,12 +56,12 @@ var pie2 = c3.generate({
 	bindto:"#pie2",
     data: {
         columns: [
-            ['First', <%=first[1]%>],
-            ['Second', <%=second[1]%>],
-            ['Third', <%=third[1]%>],
-            ['Fourth', <%=fourth[1]%>],
-            ['Fifth', <%=sixth[1]%>],
-            ['Sixth', <%=sixth[1]%>]
+            ['Very Advanced', <%=first[1]%>],
+            ['Very Proficient', <%=second[1]%>],
+            ['Proficient', <%=third[1]%>],
+            ['Basic', <%=fourth[1]%>],
+            ['Below Basic', <%=sixth[1]%>],
+            ['Far Below Basic', <%=sixth[1]%>]
         ],
         title: "2013 Breakdown",
         type : 'pie',
@@ -65,12 +72,12 @@ var pie3 = c3.generate({
 	bindto:"#pie3",
     data: {
         columns: [
-            ['First', <%=first[2]%>],
-            ['Second', <%=second[2]%>],
-            ['Third', <%=third[2]%>],
-            ['Fourth', <%=fourth[2]%>],
-            ['Fifth', <%=sixth[2]%>],
-            ['Sixth', <%=sixth[2]%>]
+            ['Very Advanced', <%=first[2]%>],
+            ['Very Proficient', <%=second[2]%>],
+            ['Proficient', <%=third[2]%>],
+            ['Basic', <%=fourth[2]%>],
+            ['Below Basic', <%=sixth[2]%>],
+            ['Far Below Basic', <%=sixth[2]%>]
         ],
         title: "2013 Breakdown",
         type : 'pie',
@@ -81,12 +88,12 @@ var pie4 = c3.generate({
 	bindto:"#pie4",
     data: {
         columns: [
-            ['First', <%=first[3]%>],
-            ['Second', <%=second[3]%>],
-            ['Third', <%=third[3]%>],
-            ['Fourth', <%=fourth[3]%>],
-            ['Fifth', <%=sixth[3]%>],
-            ['Sixth', <%=sixth[3]%>]
+            ['Very Advanced', <%=first[3]%>],
+            ['Very Proficient', <%=second[3]%>],
+            ['Proficient', <%=third[3]%>],
+            ['Basic', <%=fourth[3]%>],
+            ['Below Basic', <%=sixth[3]%>],
+            ['Far Below Basic', <%=sixth[3]%>]
         ],
         title: "2013 Breakdown",
         type : 'pie',

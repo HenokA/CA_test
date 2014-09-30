@@ -2,7 +2,7 @@
 <head>
 	<title>CAtest</title>
 	<!--pure -->
-	<link type: "text/css" rel="stylesheet" href = "/style.css">
+	<link type: "text/css" rel="stylesheet" href = "/css/style.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.5.0/pure-min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js"></script>
@@ -17,6 +17,8 @@
     <script src="/select2/select2.js" charset="utf-8"></script>
 	<link href="/select2/select2.css" type="text/css" rel="stylesheet"/>
 	<!--select2 action-->
+	<link rel="stylesheet" href="/css/animate.css">
+	
 	<script>
         $(document).ready(function() { 
         	$("#school").select2(); 
@@ -25,10 +27,11 @@
 
         });
     </script>
+    
 </head>
 <body class = "container">
 <div class = "header">
-	<div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+	<div id = "menu" class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
 	    <a style = "float: left" href="/" class="pure-menu-heading">CA Test</a>
 	    <ul style="float: right;">
 	        <li class="pure-menu-selected"><a href="/">Home</a></li>

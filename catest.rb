@@ -7,15 +7,38 @@ configure do
 end
 
 get '/' do
-	erb :"home.html"
+	names = Array.new
+	File.open('names.txt', 'r'){ |file|
+		file.each_line do |line|
+			line = line.split(',')
+			names.push(line[1].chomp)
+		end
+	}
+	erb :"home.html", :locals =>{:names => names}
 end	
 
 post '/home' do
-  session['school'] = params[:school]
-  session['test'] = params[:test]
-  session['grade']= params[:grade]
-  session['b1'] = params[:button1]
-  redirect('/schools/'+params[:school]+"/"+params[:grade]+"/"+params[:test]);
+	names=Array.new
+	ids = Array.new
+	File.open('names.txt', 'r'){ |file|
+		file.each_line do |line|
+			line = line.split(',')
+			names.push(line[1].chomp)
+			ids.push(line[0].chomp)
+		end
+	}
+	count = 0
+	names.each do |name|
+		if params[:school] == name
+			params[:school]=ids[count]
+		end
+		count +=1
+	end
+    session['school'] = params[:school]
+    session['test'] = params[:test]
+    session['grade']= params[:grade]
+    session['b1'] = params[:button1]
+    redirect('/schools/'+params[:school]+"/"+params[:grade]+"/"+params[:test]);
 end
 
 get '/about' do
@@ -32,9 +55,14 @@ get '/schools/:school/:grade/:test' do
 	sixth = Array.new;
 	todo = 0;
 	info = Array.new;
-	  File.open('sf.txt', 'r'){ |file|
+	countymean = Array.new;
+	File.open('sf.txt', 'r'){ |file|
 		file.each_line do |line|
 			line = line.split(',')
+			if (line[1] == "00000" && line[2] =="0000000" && params[:test] == line[12] && params[:grade] == line[11])
+				puts line[16]
+				countymean.push(line[16])
+			end
 			if (params[:school] == line[2] && params[:test] == line[12] && params[:grade] == line[11])
 				mean.push(line[16].to_s)
 				first.push(line[17].to_s)
@@ -56,7 +84,7 @@ get '/schools/:school/:grade/:test' do
 	if mean.empty?
 		redirect('/nopage')
 	end
-	erb :"schools.html", :locals => {:school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
+	erb :"schools.html", :locals => {:countymean => countymean, :school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
 										:fifth => fifth, :sixth => sixth, :info => info}
 end
 
