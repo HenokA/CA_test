@@ -116,3 +116,4 @@
 3830197|Independence High|9|12
 3830205|Wallenberg (Raoul) Traditional High|9|12
 3830254|Burton (Phillip and Sala) Academic High|9|12
+3830163|Newcomer High|9|12

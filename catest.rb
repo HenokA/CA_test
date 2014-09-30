@@ -10,8 +10,8 @@ get '/' do
 	names = Array.new
 	File.open('names.txt', 'r'){ |file|
 		file.each_line do |line|
-			line = line.split(',')
-			names.push(line[1].chomp)
+			line = line.split('|')
+			names.push(line)
 		end
 	}
 	erb :"home.html", :locals =>{:names => names}
@@ -22,7 +22,7 @@ post '/home' do
 	test=Hash.new
 	File.open('names.txt', 'r'){ |file|
 		file.each_line do |line|
-			line = line.split(',')
+			line = line.split('|')
 			names[line[0].chomp] = line[1].chomp
 		end
 	}
@@ -42,12 +42,6 @@ post '/home' do
 			params[:test] = key
 		end
 	end
-	# names.each do |name|
-	# 	if params[:school] == name
-	# 		params[:school]=ids[count]
-	# 	end
-	# 	count +=1
-	# end
     session['school'] = params[:school]
     session['test'] = params[:test]
     session['grade']= params[:grade]

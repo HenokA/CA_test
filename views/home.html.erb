@@ -15,7 +15,34 @@
 	        <select style="width: 70%" id="school" name="school">
 	        <option></option>
 	        	<% names.each do |name| %>
-	        	<option> <%=name%> </option>
+	        	<% puts name[2].to_s + "," + name[3].to_s %>
+	        	<% puts name[3].to_i== 5 %>
+
+	        		<% if name[2].to_s=='K' && name[3].to_i==5%>
+	        			<optgroup label= "Grades K-5">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "K" && name[3].to_i == 8 %>
+	        			<optgroup label= "Grades K-8">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "4" && name[3].to_i == 8 %>
+	        			<optgroup label= "Grades 4-8">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "5" && name[3].to_i == 8 %>
+	        			<optgroup label= "Grades 5-8">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "6" && name[3].to_i == 12 %>
+	        			<optgroup label= "Grades 6-12">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "6" && name[3].to_i == 8 %>
+	        			<optgroup label= "Grades 6-8">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "8" && name[3].to_i == 12 %>
+	        			<optgroup label= "Grades 8-12">
+	        			<option> <%=name[1]%> </option>
+	        		<% elsif name[2].to_s == "9" && name[3].to_i == 12 %>
+	        			<optgroup label= "Grades 9-12">
+	        			<option> <%=name[1]%> </option>
+	        		<%end%>
 	            <%end%>
 	        </select>
 	        </label>
@@ -54,6 +81,9 @@
 	         <label for="grade">Grade</label>
 	        <select id="grade" name="grade">
 	        	<option></option>
+	            <option>2</option>
+	            <option>3</option>
+	            <option>4</option>	       
 	            <option>5</option>
 	            <option>6</option>
 	            <option>7</option>
