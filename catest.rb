@@ -18,22 +18,36 @@ get '/' do
 end	
 
 post '/home' do
-	names=Array.new
-	ids = Array.new
+	names=Hash.new
+	test=Hash.new
 	File.open('names.txt', 'r'){ |file|
 		file.each_line do |line|
 			line = line.split(',')
-			names.push(line[1].chomp)
-			ids.push(line[0].chomp)
+			names[line[0].chomp] = line[1].chomp
 		end
 	}
-	count = 0
-	names.each do |name|
-		if params[:school] == name
-			params[:school]=ids[count]
+	File.open('tests.txt', 'r'){ |file|
+		file.each_line do |line|
+			line = line.split(',')
+			test[line[0].chomp] = line[1].chomp
 		end
-		count +=1
+	}
+	names.each do |key, value|
+		if params[:school] == value
+			params[:school] = key
+		end
 	end
+	test.each do |key, value|
+		if params[:test] == value
+			params[:test] = key
+		end
+	end
+	# names.each do |name|
+	# 	if params[:school] == name
+	# 		params[:school]=ids[count]
+	# 	end
+	# 	count +=1
+	# end
     session['school'] = params[:school]
     session['test'] = params[:test]
     session['grade']= params[:grade]
@@ -46,6 +60,7 @@ get '/about' do
 end
 
 get '/schools/:school/:grade/:test' do
+	test = Hash.new;
 	mean = Array.new;
 	first = Array.new;
 	second = Array.new;
@@ -55,7 +70,21 @@ get '/schools/:school/:grade/:test' do
 	sixth = Array.new;
 	todo = 0;
 	info = Array.new;
+	testname = nil
 	countymean = Array.new;
+	File.open('tests.txt', 'r'){ |file|
+		file.each_line do |line|
+			line = line.split(',')
+			test[line[0].chomp] = line[1].chomp
+		end
+	}
+	test.each do |key, value|
+		puts "aojlklaksfkasjkflakjfjkaljklajkljkasfljklajksfdljkafds"
+		if params[:test] == key
+			puts key
+			testname = value
+		end
+	end
 	File.open('sf.txt', 'r'){ |file|
 		file.each_line do |line|
 			line = line.split(',')
@@ -84,7 +113,7 @@ get '/schools/:school/:grade/:test' do
 	if mean.empty?
 		redirect('/nopage')
 	end
-	erb :"schools.html", :locals => {:countymean => countymean, :school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
+	erb :"schools.html", :locals => {:testname => testname, :countymean => countymean, :school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
 										:fifth => fifth, :sixth => sixth, :info => info}
 end
 
