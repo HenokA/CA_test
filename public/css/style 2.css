@@ -1,0 +1,196 @@
+.pure-menu{
+	background-color: #7FDBFF;
+}
+.pure-form{
+	text-align: center;
+}
+#school,#grade,#test{
+	margin:0px auto;
+	width: 30%;
+}
+.center{
+	text-align: center;
+}
+body {
+    background-image: url('http://i.imgur.com/utuOIW5.png');
+
+    line-height: 1.7em;
+    color: black;
+    font-size: 13px;
+}
+#menu{
+	background-color: #7FDBFF;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    color: #34495e;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*
+ * -- LAYOUT STYLES --
+ * These are some useful classes which I will need
+ */
+.l-box {
+    padding: 1em;
+}
+
+.l-box-lrg {
+    padding: 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+    text-align: center;
+}
+
+.choices{
+	margin-left:100%;
+}
+
+.noedge{
+	margin: .5%;
+	padding-top: 20px;
+}
+
+#pie,#pie2,#pie3,#pie4{
+	margin:0px;
+	padding:0px;
+}
+#pierow{
+	margin:0px;
+	padding:0px;
+    border: 2px solid #ddd;
+}
+
+/*
+ * -- PURE FORM STYLES --
+ * Style the form inputs and labels
+ */
+.pure-form label {
+    margin: 1em 0 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.pure-form input[type] {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/*
+ * -- PURE BUTTON STYLES --
+ * I want my pure-button elements to look a little different
+ */
+.pure-button {
+    background-color: #1f8dd6;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
+
+a.pure-button-primary {
+    background: white;
+    color: #1f8dd6;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+
+/*
+ * -- MENU STYLES --
+ * I want to customize how my .pure-menu looks at the top of the page
+ */
+
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu.pure-menu-open {
+    background: #2d3e50;
+}
+.pure-menu.pure-menu-open.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+
+.splash-container {
+    z-index: 1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    padding:; 0px;
+    margin:; 0px;
+    height: 100%;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    margin: auto;
+    padding = 0px;
+    margin = 0px;
+    position: relative;
+    top: 25%; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lato', serif;
+    color: black;
+    font-weight: 100;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: black;
+    font-family: 'Lato', serif;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+.pie{
+	text-align: center;
+}

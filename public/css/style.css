@@ -14,7 +14,10 @@ body {
     font-size: 13px;
 }
 #menu{
-	background-color: #7FDBFF;
+	background-color: #001F3F;
+}
+#menuop{
+    color: white;
 }
 h1,
 h2,
@@ -24,6 +27,12 @@ h5,
 h6,
 label {
     color: #34495e;
+}
+.center{
+    text-align: center;
+}
+.container{
+    background-image: url('http://i.imgur.com/W2on5Ek.png');
 }
 
 .pure-img-responsive {
@@ -49,7 +58,6 @@ label {
 }
 
 .choices{
-	margin-left:10%;
 	margin-top: 12.5%;
 	height: 100%;
 
@@ -147,17 +155,12 @@ a.pure-button-primary {
 
 .splash-container {
     background-image: "index_back.png";
-    z-index: 1;
+    z-index: 10;
     overflow: hidden;
     top: 0;
     left: 0;
     padding = 0px;
     margin = 0px;
-    border-style: solid;
-	border-right: thick double;
-	border-top: none;
-	border-bottom: none;
-    border-left: none;
     height: 100%;
 }
 
@@ -174,12 +177,11 @@ a.pure-button-primary {
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     font-family: 'Lato', serif;
     color: black;
     font-weight: 100;
-    border-radius: 5px;
     line-height: 1em;
 }
 

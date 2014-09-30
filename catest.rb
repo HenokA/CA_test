@@ -42,6 +42,9 @@ post '/home' do
 			params[:test] = key
 		end
 	end
+	if params[:school].empty? || params[:test].empty? || params[:grade].empty?
+		redirect('nopage')
+	end
     session['school'] = params[:school]
     session['test'] = params[:test]
     session['grade']= params[:grade]
