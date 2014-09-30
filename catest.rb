@@ -73,7 +73,6 @@ get '/schools/:school/:grade/:test' do
 		end
 	}
 	test.each do |key, value|
-		puts "aojlklaksfkasjkflakjfjkaljklajkljkasfljklajksfdljkafds"
 		if params[:test] == key
 			puts key
 			testname = value
