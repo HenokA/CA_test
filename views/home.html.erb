@@ -16,7 +16,6 @@
 	        	<% counter = 0 %>
 	        	<% while counter < 118 %>
 	        		<% if counter != 0 %>
-	        			<% puts names.length %>
 	        			<% if names[counter-1][2] == names[counter][2] && names[counter-1][3] == names[counter][3] %>
 	        				<option> <%=names[counter][1]%> </option>
 	        			<%elsif names[counter][2].to_s=='K' && names[counter][3].to_i==5%>
