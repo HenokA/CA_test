@@ -12,7 +12,8 @@
 	<form action= "/home" method = "post" class="pure-form pure-form-stacked">
 	    <fieldset>
 	         <label for="city">School</label>
-	        <select id="school" name="school">
+	        <select style="width: 70%" id="school" name="school">
+	        <option></option>
 	        	<% names.each do |name| %>
 	        	<option> <%=name%> </option>
 	            <%end%>
@@ -20,14 +21,39 @@
 	        </label>
 
 	         <label for="test">Test</label>
-	        <select id="test" name="test">
-	            <option>7</option>
-	            <option>9</option>
-	            <option>11</option>
+	        <select id="test" style="width: 50%" name="test">
+	        	<option></option>
+	        	<optgroup label="For Grades 2-8">
+	            <option>English-Language Arts</option>
+	            <option>Mathematics</option>
+	        	<optgroup label="For Grade 9,10 and 11">
+	            <option>Physics</option>
+	            <option>World History</option>
+	            <option>Earth Science</option>
+	            <option>Biology</option>
+	            <option>Algebra 2</option>
+	            <option>Geometry</option>
+	        	<optgroup label="For Grade 9">
+	            <option>General Mathematics</option>
+	            <option>Algebra 1</option>
+	            <option>Geometry</option>
+	        	<optgroup label="For Grade 10">	    
+	            <option>Algebra 1</option>
+	            <option>Science</option>
+	            <option>Chemistry</option>
+	            <option>English-Language Arts</option>
+	            <option>Summative High School Mathematics</option>
+	            <option>Integrated Math 1</option>
+	        	<optgroup label="For Grade 11">	    
+	            <option>Summative High School Mathematics</option>
+	            <option>Integrated Math 2</option>
+	            <option>English-Language Arts</option>
+	            <option>Chemistry</option>
 	        </select>
 
 	         <label for="grade">Grade</label>
 	        <select id="grade" name="grade">
+	        	<option></option>
 	            <option>5</option>
 	            <option>6</option>
 	            <option>7</option>
@@ -37,7 +63,7 @@
 	            <option>11</option>
 
 	        </select>
-	        <button name = "button1" type="submit" class="pure-button pure-button-primary"> Search </button>
+	        <button name = "button1" type="submit" style="margin-top: 3%"class="pure-button pure-button-primary"> Search </button>
 	    </fieldset>
 	</form>
 </div>

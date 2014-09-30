@@ -6,6 +6,7 @@
 }
 #school,#grade,#test{
 	margin:0px auto;
+	width: 30%;
 }
 
 body {

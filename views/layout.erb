@@ -21,9 +21,15 @@
 	
 	<script>
         $(document).ready(function() { 
-        	$("#school").select2(); 
-        	$("#test").select2(); 
-        	$("#grade").select2(); 
+        	$("#school").select2({
+        		placeholder: "Select a School"
+        	}); 
+        	$("#test").select2({
+        		placeholder: "Select a Test"
+        	}); 
+        	$("#grade").select2({
+        		placeholder: "Select a Grade"
+        	}); 
 
         });
     </script>
