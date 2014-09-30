@@ -116,4 +116,7 @@ end
 get '/nopage' do
 	erb :"fail.html"
 end
+get '/*' do
+	erb :"fail.html"
+end
 
