@@ -1,11 +1,9 @@
+/* General */
 .pure-menu{
 	background-color: #7FDBFF;
 }
 .pure-form{
 	text-align: center;
-}
-#school,#grade,#test{
-	margin:0px auto;
 }
 
 body {
@@ -73,6 +71,47 @@ label {
 	margin:0px;
 	padding:0px;
 }
+
+/* About Page */
+#aboutpics{
+    padding-right: 5%;
+}
+#aboutimg{
+    border-radius: 1000px; width: 100%; height: auto;
+}
+
+/* Fail Page */
+#failtext{
+    text-align: center;
+}
+
+/* Home Page */
+#selectcont{
+    height: 70%;
+}
+#grade{
+    margin:0px auto;
+}
+#school{
+    width: 70%;
+    margin:0px auto;
+}
+#test{
+    width: 50%;
+    margin:0px auto;
+
+}
+#searchbutton{
+    margin-top: 3%;
+}
+ /* School */
+.pie{
+    text-align: center;
+}
+#pierow{
+    width:24.5%;
+}
+
 
 
 /*
@@ -159,8 +198,8 @@ a.pure-button-primary {
     overflow: hidden;
     top: 0;
     left: 0;
-    padding = 0px;
-    margin = 0px;
+    padding : 0px;
+    margin : 0px;
     height: 100%;
 }
 
@@ -193,9 +232,4 @@ a.pure-button-primary {
     opacity: 0.8;
 }
 
-.pie{
-	text-align: center;
-}
-#pierow{
-    width:24.5%;
-}
+

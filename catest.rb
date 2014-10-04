@@ -8,7 +8,8 @@ end
 
 get '/' do
 	names = Array.new
-	File.open('names.txt', 'r'){ |file|
+	# Gets all of the names of schools from file
+	File.open('names.txt', 'r'){ |file| 
 		file.each_line do |line|
 			line = line.split('|')
 			names.push(line)
@@ -26,22 +27,26 @@ post '/home' do
 			names[line[0].chomp] = line[1].chomp
 		end
 	}
+	# gets all of the tests 
 	File.open('tests.txt', 'r'){ |file|
 		file.each_line do |line|
 			line = line.split(',')
 			test[line[0].chomp] = line[1].chomp
 		end
 	}
+	# based on user selection, matches to school code
 	names.each do |key, value|
 		if params[:school] == value
 			params[:school] = key
 		end
 	end
+	# based on user selection, matches to test code
 	test.each do |key, value|
 		if params[:test] == value
 			params[:test] = key
 		end
 	end
+	# if nothing is null
 	if params[:school].empty? || params[:test].empty? || params[:grade].empty?
 		redirect('nopage')
 	end
@@ -81,14 +86,18 @@ get '/schools/:school/:grade/:test' do
 			testname = value
 		end
 	end
+	# sf is the main file with the tests that have been parsed and cleaned
 	File.open('sf.txt', 'r'){ |file|
 		file.each_line do |line|
 			line = line.split(',')
-			if (line[1] == "00000" && line[2] =="0000000" && params[:test] == line[12] && params[:grade] == line[11])
-				puts line[16]
+			if (line[1] == "00000" && line[2] =="0000000" && params[:test] == 
+				# gets the county means for that test
+				line[12] && params[:grade] == line[11])
 				countymean.push(line[16])
 			end
-			if (params[:school] == line[2] && params[:test] == line[12] && params[:grade] == line[11])
+			# if all of the users input matches something in our file
+			if (params[:school] == line[2] && params[:test] == line[12] && 
+				params[:grade] == line[11])
 				mean.push(line[16].to_s)
 				first.push(line[17].to_s)
 				second.push(line[18].to_s)
@@ -96,9 +105,12 @@ get '/schools/:school/:grade/:test' do
 				fourth.push(line[20].to_s)
 				fifth.push(line[21].to_s)
 				sixth.push(line[22].to_s)
+				# if we want to scrape information from the cde website
 				if todo == 0
-					url = "http://www.cde.ca.gov/re/sd/details.asp?cds=" + line[0].to_s + line[1].to_s + line[2].to_s+ "&Public=Y"
+					url = "http://www.cde.ca.gov/re/sd/details.asp?cds=" + 
+							line[0].to_s + line[1].to_s + line[2].to_s+ "&Public=Y"
 					data = Nokogiri::HTML(open(url))
+					# grabs all of the td elements and parses to find the ones we want
 					data.css("td").each_slice(2).each do |row|
 						info.push(row[1].to_s[4..row.length-8])
 					end
@@ -106,10 +118,14 @@ get '/schools/:school/:grade/:test' do
 			end
 		end
 	}
+	# if there was no mean or there were not 4 of them, redirect to bad info page
 	if mean.empty? || mean.length != 4
 		redirect('/nopage') 
 	end
-	erb :"schools.html", :locals => {:testname => testname, :countymean => countymean, :school => params[:school], :grade => params[:grade], :test => params[:test], :mean => mean, :first => first, :second => second, :third => third, :fourth => fourth,
+	erb :"schools.html", :locals => {:testname => testname, :countymean => countymean, 
+										:school => params[:school], :grade => params[:grade], 
+										:test => params[:test], :mean => mean, :first => first, 
+										:second => second, :third => third, :fourth => fourth,
 										:fifth => fifth, :sixth => sixth, :info => info}
 end
 
